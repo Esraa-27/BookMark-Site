@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="intro py-5 m-auto">
+          <div class="text-center">
+              <h1 class="text-white ">Welcome In Your Favorite Bookmark sites</h1>
+          </div>
+  </div>
+  <ul class="nav nav-tabs d-flex  justify-content-center">
+    <button class="nav-link active text-white" data-bs-toggle="tab">
+      <a class="text-decoration-none  fs-5" routerLink="/home/create">Create</a>
+    </button>
+    <button class="nav-link  text-white " data-bs-toggle="tab">
+      <a class="text-decoration-none fs-5 " routerLink="/home/show">Show</a>
+    </button>
+  </ul>
+
+  <div class="shadow-lg bg px-5  py-3 ">
+      
+    <router-outlet></router-outlet>
+  </div>
+</div>

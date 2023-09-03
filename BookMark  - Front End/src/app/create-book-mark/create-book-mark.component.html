@@ -1,0 +1,46 @@
+
+<form  [formGroup]="createForm" (ngSubmit)="isUpdateBtn ? update(createForm) : create(createForm)" >
+    <label for="name" class="mt-3">Name</label>
+    <input type="text" formControlName="name" id="name" class="form-control ">
+    <div *ngIf="createForm.get('name')?.errors && createForm.get('name')?.touched">
+        <p *ngIf="createForm.get('name')?.getError('required') "class="alert alert-danger py-2 ">required</p>
+    </div>
+
+    <label for="link" class="mt-3">Link</label>
+    <input type="text" formControlName="link" class="form-control ">
+    <div *ngIf="createForm.get('link')?.errors && createForm.get('link')?.touched">
+        <p *ngIf="createForm.get('link')?.getError('required') "class="alert alert-danger py-2 ">required</p>
+    </div>
+
+    <label for="description" class="mt-3">Description</label>
+    <textarea type="text" formControlName="description" class="form-control " rows="3" ></textarea>
+    
+    <div *ngIf="hasError" class="mt-3">
+        <p class="alert alert-danger py-2 "> some thing wrong !</p>
+    </div>
+
+    <button *ngIf="!isUpdateBtn" type="submit" class=" btn btn-outline-danger px-4 mx-1 mt-3 "> Save  </button>
+
+    <button *ngIf="isUpdateBtn" type="submit" class="btn btn-outline-danger px-4 mx-1 mt-3"> Update  </button>
+
+    <!-- <button *ngIf="!isUpdateBtn" id="create" [disabled]=" createForm.invalid" type="submit" (click)="create(createForm)" class="  btn btn-outline-danger px-4 mx-1 mt-3" > Save </button>
+    <button *ngIf="isUpdateBtn" id="update" [disabled]=" createForm.invalid" type="submit"  (click)="update(createForm)" class="btn btn-outline-danger px-4 mx-1 mt-3" > Update </button> -->
+    <div class="btn btn-outline-warning px-4  mx-1 mt-3" (click)="clear()"> Clear </div>                        
+
+   
+    
+</form>
+
+<div *ngIf="overlayFlag" class="alert alert-danger py-2 overlay ">
+    <div class="popup">
+        <div  id="close" (click)="overlay()">
+            <i class="fa-solid fa-xmark"></i> 
+        </div>
+        <div>
+            <p>{{message}}</p>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,38 @@
+
+<table class="table table-dark text-center table-striped my-3">
+    <thead>
+        <tr>
+            <th>item </th>
+            <th>Name</th>
+            <th>Link</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        
+    </thead>
+    <tbody id="tbody" *ngFor="let site of sites ; let i = index">      
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{site.name}}</td>
+            <td><a href="{{site.link}}" class="text-white" target="_blank">{{site.link}}</a></td>
+            <td>{{site.description}}</td>
+            <td><button type="button" class="btn btn-outline-warning  px-4 " (click)="Update(site.id)"> Edit </button></td>
+            <td><button type="button" class="btn btn-outline-danger  px-4 " (click)="Delete(site.id)"> Delete </button></td> 
+        </tr>       
+    </tbody>
+</table> 
+<div *ngIf="isEmpty" >
+    <p class="alert my-2  text-center fw-bold bg-danger text-white py-2 m-lg-5 ">
+        You Don't have Bookmarks <br>
+        Go to Create to save your Favorite Site
+    </p>
+</div>
+<div *ngIf="isDeleted" >
+    <p class="alert my-2  text-center fw-bold bg-danger text-white py-2 m-lg-5 ">
+        {{messageOfDelete}}
+    </p>
+</div>
+
+
+

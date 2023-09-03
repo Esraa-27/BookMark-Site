@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="row  shadow-lg bg py-5 d-flex justify-content-center align-items-center">
+      <div class="col-md-9 col-lg-6 " >
+        <div class=" text-center">
+            <h1 class=" text-center text-danger fw-bolder">Bookmarks</h1>
+            <p>Login to manage your account </p>
+        </div>
+        <div *ngIf="isError">
+            <ul class="list-unstyled" *ngFor="let error of errors">
+                <li class="alert alert-danger py-2 ">{{error}}</li>
+            </ul>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+            <label for="email" class="mt-3">Email</label>
+            <input type="email" formControlName="email" class="form-control">
+            <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+                <p *ngIf="loginForm.get('email')?.getError('email') "class="alert alert-danger py-2 ">email invalid</p>
+                <p *ngIf="loginForm.get('email')?.getError('required') "class="alert alert-danger py-2 ">required</p>
+            </div>
+            
+    
+            <label for="password" class="mt-3">Password</label>
+            <input type="password" formControlName="password" class="form-control">
+            <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+                <p *ngIf="loginForm.get('password')?.getError('pattern') "class="alert alert-danger py-2 ">password must have letters and numbers </p>
+                <p *ngIf="loginForm.get('password')?.getError('required') "class="alert alert-danger py-2 ">required</p>
+                <p *ngIf="loginForm.get('password')?.getError('minLength') "class="alert alert-danger py-2 ">min Length 6 char</p>
+            </div>
+
+            <button [disabled]=" loginForm.invalid" class="btn btn-outline-danger px-4 m-2 mt-3 ">Log in</button>
+            
+        </form>
+
+        <div class=" m-1">
+            <p>Don't have an account ?<a class="text-danger text-decoration-none " routerLink="/register"> Sign up!</a></p>
+        </div>
+        
+          
+      </div>
+       
+    </div>
+</div> 

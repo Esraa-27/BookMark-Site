@@ -1,0 +1,38 @@
+.overlay {
+    position:absolute;
+    display: block;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:rgba(0, 0, 0, 0.8);
+    z-index:9999;
+}
+#close{
+    cursor: pointer;
+    background-color: transparent ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    color: #fff;
+
+}
+.popup {
+    position:absolute;
+    width:50%;
+    height:25%;
+    top:50%;
+    left:50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    border-radius: 5px;
+    background:#dc3545;
+    color:#fff;
+    font-size: 35px;
+    font-weight: 700;
+    box-shadow: 0px 0px 10px 0px black;
+}
+
