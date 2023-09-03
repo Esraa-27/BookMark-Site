@@ -66,9 +66,9 @@ class SiteController extends Controller
                 'message' => 'Unauthorized'
             ], 401);
 
-        $sites=Site::where('user_id', '=', $user->id)->where('link', '=', $request->link)->select('*')->get();
-        if(!empty($sites->first()) ){
-            return response()->json([ "message"=>"Sorry ,this Site added before" ,"hasError"=>true]);
+        $sites=Site::where('user_id', '=', $user->id)->where('link', '=', $request->link)->select('*')->first();
+        if(!empty($sites)){
+            return response()->json(["message"=>"Sorry ,this Site added before" ,"hasError"=>true],200);
         }
         
         try{

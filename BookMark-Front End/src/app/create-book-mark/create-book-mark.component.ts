@@ -91,7 +91,10 @@ export class CreateBookMarkComponent {
       })
   }
   create(createForm:FormGroup){
-    this.getTokenAndUser();    
+    this.getTokenAndUser();  
+    createForm.get("user_id")?.setValue(this.user.id);
+    console.log(createForm.value);
+    
     this._site.create(createForm.value, this.token).subscribe(
       (response)=>{
         //console.log(response);
@@ -105,7 +108,7 @@ export class CreateBookMarkComponent {
         }
       },
       (error)=>{
-        //console.log(error);
+        console.log(error);
         this.hasError=true;     
       }
     )

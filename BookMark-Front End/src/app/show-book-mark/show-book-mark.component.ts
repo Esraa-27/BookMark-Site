@@ -85,6 +85,8 @@ export class ShowBookMarkComponent  {
   }
   Delete(id:number){
     //console.log("delete "+id);
+    //console.log(this.token);
+    this.token=localStorage.getItem("token")??"";
     this._site.delete(id, this.token).subscribe(
       (response)=>{
         this.isDeleted=true;
@@ -96,9 +98,9 @@ export class ShowBookMarkComponent  {
         this.getAll();
       },
       (error)=>{
-        //console.log(error.message);
+        console.log(error.message);
         
-        if(error.message=="Unauthorized"){
+        if(error.status ===401){
           this._router.navigate(["/login"]);
           localStorage.clear();
         }else{

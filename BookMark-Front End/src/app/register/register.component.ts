@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   registerForm:FormGroup=new FormGroup({
     name:new FormControl(null ,[Validators.minLength(2),Validators.required ] ),
     email:new FormControl(null ,[Validators.email, Validators.required ]),
-    password:new FormControl(null , [Validators.required ,Validators.minLength(2), Validators.pattern("[A-Za-z1-9]+")] )    
+    password:new FormControl(null , [Validators.required ,Validators.minLength(6), Validators.pattern("[A-Za-z1-9]+")] )    
   });
 
   token:string="";

@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BookMark-Back End\\app\\Http",
+    "\\BookMark-Back End\\app\\Http\\Controllers",
+    "\\BookMark-Front End\\src",
+    "\\BookMark-Front End\\src\\app"
   ],
-  "SelectedNode": "\\C:\\Users\\ZERO TECH\\Source\\Repos\\BookMark-Site-Angular-Laravel-",
+  "SelectedNode": "\\BookMark-Back End",
   "PreviewInSolutionExplorer": false
 }

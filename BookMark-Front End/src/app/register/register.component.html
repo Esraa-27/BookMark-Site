@@ -32,7 +32,7 @@
             <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
                 <p *ngIf="registerForm.get('password')?.getError('pattern') "class="alert alert-danger py-2 ">password must have letters and numbers </p>
                 <p *ngIf="registerForm.get('password')?.getError('required') "class="alert alert-danger py-2 ">required</p>
-                <p *ngIf="registerForm.get('password')?.getError('minLength') "class="alert alert-danger py-2 ">min Length 6 char</p>
+                <p *ngIf="registerForm.get('password')?.getError('minlength') "class="alert alert-danger py-2 ">min Length 6 char</p>
             </div>
 
             <button [disabled]=" registerForm.invalid" class="btn btn-outline-danger px-4 m-2 mt-3 ">Register</button>

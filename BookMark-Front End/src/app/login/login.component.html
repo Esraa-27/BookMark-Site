@@ -24,7 +24,7 @@
             <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
                 <p *ngIf="loginForm.get('password')?.getError('pattern') "class="alert alert-danger py-2 ">password must have letters and numbers </p>
                 <p *ngIf="loginForm.get('password')?.getError('required') "class="alert alert-danger py-2 ">required</p>
-                <p *ngIf="loginForm.get('password')?.getError('minLength') "class="alert alert-danger py-2 ">min Length 6 char</p>
+                <p *ngIf="loginForm.get('password')?.getError('minlength') "class="alert alert-danger py-2 ">min Length 6 char</p>
             </div>
 
             <button [disabled]=" loginForm.invalid" class="btn btn-outline-danger px-4 m-2 mt-3 ">Log in</button>
